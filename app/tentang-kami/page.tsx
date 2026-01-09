@@ -22,12 +22,14 @@ export default function TentangKamiPage() {
         <div className="section-container">
           <div className="story-grid">
             <div className="story-image">
-              <Image
-                src="/images/alphard.avif"
-                alt="SinarRent Story"
-                width={500}
-                height={400}
-              />
+              <div className="image-container">
+                <Image
+                  src="/images/alphard.avif"
+                  alt="SinarRent Story"
+                  fill
+                  style={{ objectFit: 'contain' }}
+                />
+              </div>
               <div className="experience-badge">
                 <div className="number">10+</div>
                 <div className="text">Tahun Pengalaman</div>
@@ -273,10 +275,18 @@ export default function TentangKamiPage() {
           position: relative;
         }
 
+        .image-container {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 16 / 10;
+          border-radius: 20px;
+          overflow: hidden;
+          box-shadow: var(--shadow-xl);
+        }
+
         .story-image :global(img) {
           width: 100%;
           border-radius: 20px;
-          box-shadow: var(--shadow-xl);
         }
 
         .story-image::before {
